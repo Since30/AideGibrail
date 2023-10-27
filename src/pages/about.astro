@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="À propos | Gibrail Hanafi" description="À propos de moi">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="À propos"
+				tagline="C'est ici que vous en apprendrez un peu plus sur mon parcours et mes motivations."
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/at-work.jpg"
+					alt="Hanafi-Gibrail"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Description</h2>
+				<div class="content">
+					<p>
+						Pendant la période "Covid" on s'est tous sentis isolé(e)s, pour lutter contre le sentiment de solitude j'ai commencé a streamer, 
+						c'est en cherchant a améliorer la qualité de mes Stream que j'ai commencer a rédiger mes premières lignes de codes (Html,CSS) pour en changer l'aspect.<br>
+						Actuellement le dev m'a tellement intéressé que j'ai participé au "Concours qui casse les codes" auprès de la <a href="https://3wacademy.fr/">3WA/3WRH</a> 
+						pour voir si coder me plaisait assez pour sauter le pas de la reconversion professionnelle et ça à été le cas.	
+					</p>
+					<br>
+					<p>
+						J'ai actuellement comme projet de créer un site web qui fera office de passerelle entre ma plateforme de streaming et mes différents réseaux
+						et permettra a ma communauté de visionner l'ensemble de nos expériences depuis la création de ma chaîne, ce sera ma première réalisation pour ce portfolio .
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Formation</h2>
+				<div class="content">
+					<p>Formation Développeur Intégrateur Web 2023-2024 : <br>
+						Rythme : 3 semaines en entreprise / 1 semaine en école . <br>
+						Formation éligible à <a href="https://www.canva.com/design/DAFcDzPS9JU/urIYXUh2-58mBDv3xC10zA/view?utm_content=DAFcDzPS9JU&utm_campaign=designshare&utm_
+						medium=link&utm_source=publishsharelink#1" >l'Aide Exceptionnelle de 6000€</a> .</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Compétences</h2>
+				<div class="content">
+					<p>HTML, CSS, JS, PHP, SQL puis Full Stack Developer, Spécialisation React ou Angular et Symfony ou Node JS </p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
